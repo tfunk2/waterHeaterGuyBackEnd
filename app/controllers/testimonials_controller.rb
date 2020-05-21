@@ -9,7 +9,7 @@ class TestimonialsController < ApplicationController
             name: params[:name],
             message: params[:message]
         )
-        render json: @ new_testimonial
+        render json: @new_testimonial
     end
 
     def destroy
