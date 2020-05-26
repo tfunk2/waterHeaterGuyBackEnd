@@ -1,4 +1,7 @@
 class TestimonialsController < ApplicationController
+
+    before_action :authenticate, only: [:index, :destroy]
+
     def index
         @testimonials = Testimonial.all
         render json: @testimonials
