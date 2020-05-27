@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
 
-    before_action :authenticate, only: [:index, :show, :create, :update, :destroy]
+    # before_action :authenticate, only: [:index, :show, :create, :update, :destroy]
 
     def index
         @admins = Admin.all
