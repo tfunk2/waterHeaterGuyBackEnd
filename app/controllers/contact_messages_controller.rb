@@ -1,4 +1,7 @@
 class ContactMessagesController < ApplicationController
+
+    before_action :authenticate, only: [:index, :show, :destroy]
+
     def index
         @contact_messages = ContactMessage.all
         render json: @contact_messages

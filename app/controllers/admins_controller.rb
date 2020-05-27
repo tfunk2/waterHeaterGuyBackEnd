@@ -1,4 +1,7 @@
 class AdminsController < ApplicationController
+
+    # before_action :authenticate, only: [:index, :show, :create, :update, :destroy]
+
     def index
         @admins = Admin.all
         render json: @admins

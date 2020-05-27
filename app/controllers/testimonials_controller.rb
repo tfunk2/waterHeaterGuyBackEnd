@@ -1,4 +1,7 @@
 class TestimonialsController < ApplicationController
+
+    before_action :authenticate, only: [:index, :destroy]
+
     def index
         @testimonials = Testimonial.all
         render json: @testimonials
@@ -9,7 +12,7 @@ class TestimonialsController < ApplicationController
             name: params[:name],
             message: params[:message]
         )
-        render json: @ new_testimonial
+        render json: @new_testimonial
     end
 
     def destroy
