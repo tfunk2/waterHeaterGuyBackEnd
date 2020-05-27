@@ -18,9 +18,18 @@ class ContactMessagesController < ApplicationController
             email: params[:email],
             phone_number: params[:phone_number],
             address: params[:address],
-            message: params[:message]
+            message: params[:message],
+            opened_status: "unopened"
         )
         render json: @new_contact_message
+    end
+
+    def update
+        find_contact_message = ContactMessage.find(params[:id])
+        @updated_contact_message = find_contact_message.update(
+            opened_status: params[:opened_status]
+        )
+        render json: @updated_contact_message
     end
 
     def destroy
