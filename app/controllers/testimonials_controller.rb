@@ -1,6 +1,6 @@
 class TestimonialsController < ApplicationController
 
-    before_action :authenticate, only: [:index, :destroy]
+    before_action :authenticate, only: [:destroy]
 
     def index
         @testimonials = Testimonial.all
